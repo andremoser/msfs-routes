@@ -1,0 +1,66 @@
+{
+  "name": "aero-route",
+  "version": "1.0.0",
+  "description": "Planejador de rotas e METAR para MSFS 2024",
+  "main": "dist-electron/electron/main.js",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "sync:data": "node scripts/sync-airports.mjs && node scripts/sync-aircraft.mjs && node scripts/sync-commercial-routes.mjs",
+    "build:electron": "tsc -p tsconfig.electron.json",
+    "dev": "npm run build:electron && concurrently -k -n NG,ELECTRON \"ng serve\" \"wait-on http://localhost:4200 && node scripts/dev-electron.mjs\"",
+    "package": "ng build && npm run build:electron && electron-builder"
+  },
+  "build": {
+    "appId": "com.aeroroute.msfs2024",
+    "productName": "AeroRoute MSFS",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/aero-route/browser/**/*",
+      "dist-electron/**/*",
+      "electron/data/**/*"
+    ],
+    "win": {
+      "target": [
+        "portable",
+        "nsis"
+      ],
+      "signAndEditExecutable": false
+    }
+  },
+  "private": true,
+  "packageManager": "npm@11.20.0",
+  "dependencies": {
+    "@angular/common": "^22.3.0",
+    "@angular/compiler": "^22.3.0",
+    "@angular/core": "^22.3.0",
+    "@angular/forms": "^22.3.0",
+    "@angular/platform-browser": "^22.3.0",
+    "@angular/router": "^22.3.0",
+    "leaflet": "^1.9.4",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "@angular/build": "^22.3.0",
+    "@angular/cli": "^22.3.0",
+    "@angular/compiler-cli": "^22.3.0",
+    "@tailwindcss/postcss": "^4.1.12",
+    "@types/leaflet": "^1.9.22",
+    "concurrently": "^10.0.7",
+    "electron": "^45.4.1",
+    "electron-builder": "^26.18.0",
+    "jsdom": "^31.0.0",
+    "postcss": "^8.5.3",
+    "prettier": "^3.8.1",
+    "tailwindcss": "^4.1.12",
+    "typescript": "~6.0.2",
+    "vitest": "^5.0.0",
+    "wait-on": "^9.5.1"
+  }
+}

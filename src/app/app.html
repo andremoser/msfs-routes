@@ -1,0 +1,702 @@
+<div class="flex h-screen w-screen flex-col bg-slate-100 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-150">
+  <!-- Top Bar -->
+  <header class="flex h-12 shrink-0 items-center justify-between border-b border-slate-200 bg-white/90 px-4 dark:border-slate-800 dark:bg-slate-900/90">
+    <div class="flex items-center gap-3">
+      <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-sky-500/15 text-sky-600 ring-1 ring-sky-500/30 dark:text-sky-400">
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+        </svg>
+      </div>
+      <div>
+        <div class="flex items-center gap-2">
+          <h1 class="text-sm font-bold tracking-tight text-slate-900 dark:text-slate-100">AeroRoute</h1>
+          <span class="rounded bg-sky-500/15 px-1.5 py-0.5 font-mono text-[10px] font-semibold text-sky-700 dark:text-sky-300">
+            MSFS 2024
+          </span>
+        </div>
+        <p class="text-[11px] text-slate-500 dark:text-slate-400">
+          Gerador de rotas por aeronave, região, pista e METAR ao vivo
+        </p>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-2.5 text-xs">
+      @if (totalAirports() > 0) {
+        <span class="hidden rounded-md border border-slate-200 bg-slate-50 px-2.5 py-1 font-mono text-[11px] text-slate-600 dark:border-slate-800 dark:bg-slate-950/70 dark:text-slate-400 sm:inline-block">
+          {{ totalAirports() | number }} aeroportos · {{ aircraftList().length | number }} aeronaves
+        </span>
+      }
+
+      <button
+        type="button"
+        (click)="openApiSettings()"
+        class="flex items-center gap-1.5 rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1.5 text-xs font-medium text-slate-700 transition hover:border-slate-300 hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-800/80 dark:text-slate-200 dark:hover:border-slate-600 dark:hover:bg-slate-800"
+      >
+        <span>⚙ API Voos</span>
+        @if (hasApiKey()) {
+          <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+        }
+      </button>
+
+      <button
+        type="button"
+        (click)="toggleTheme()"
+        [attr.title]="theme() === 'dark' ? 'Mudar para tema claro' : 'Mudar para tema escuro'"
+        class="flex items-center gap-1.5 rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1.5 text-xs font-medium text-slate-700 transition hover:border-slate-300 hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-800/80 dark:text-slate-200 dark:hover:border-slate-600 dark:hover:bg-slate-800"
+      >
+        @if (theme() === 'dark') {
+          <svg class="h-3.5 w-3.5 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="4" />
+            <path stroke-linecap="round" d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41" />
+          </svg>
+          <span>Tema Claro</span>
+        } @else {
+          <svg class="h-3.5 w-3.5 text-sky-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z" />
+          </svg>
+          <span>Tema Escuro</span>
+        }
+      </button>
+    </div>
+  </header>
+
+  @if (initError()) {
+    <div class="m-4 rounded-xl border border-rose-500/40 bg-rose-500/10 p-4 text-sm text-rose-700 dark:text-rose-200">
+      {{ initError() }}
+    </div>
+  }
+
+  <!-- Main Workspace -->
+  <div class="flex min-h-0 flex-1 overflow-hidden">
+    <!-- Left Sidebar: Filters -->
+    <aside class="flex w-80 shrink-0 flex-col border-r border-slate-200 bg-white/80 dark:border-slate-800 dark:bg-slate-900/50 xl:w-92">
+      <div class="flex-1 space-y-4 overflow-y-auto p-4">
+        <!-- Aircraft ICAO -->
+        <div class="relative">
+          <div class="mb-1.5 flex items-center justify-between">
+            <label class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+              Aeronave (Código ICAO)
+            </label>
+            <span class="text-[11px] text-slate-500">{{ aircraftList().length | number }} modelos</span>
+          </div>
+          <div class="relative">
+            <input
+              type="text"
+              [ngModel]="aircraftQuery()"
+              (ngModelChange)="onAircraftInputChange($event)"
+              (focus)="openAircraftDropdown()"
+              (blur)="closeAircraftDropdownLater()"
+              placeholder="Ex.: B738, COL4, E110, Corvalis..."
+              class="w-full rounded-lg border border-slate-300 bg-white py-2 pl-3 pr-28 font-mono text-sm uppercase text-slate-900 placeholder:normal-case placeholder:text-slate-400 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100 dark:placeholder:text-slate-500"
+            />
+            <button
+              type="button"
+              (mousedown)="$event.preventDefault(); toggleAircraftDropdown()"
+              class="absolute right-1.5 top-1.5 flex items-center gap-1 rounded-md px-2 py-1 text-[11px] text-slate-500 hover:bg-slate-100 hover:text-slate-800 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-slate-200"
+            >
+              <span>{{ activeAircraftProfile().category }}</span>
+              <span class="text-[10px]">▾</span>
+            </button>
+          </div>
+          <p class="mt-1 truncate text-[11px] font-medium text-sky-700 dark:text-sky-300/90">
+            {{ activeAircraftProfile().name }}
+          </p>
+
+          @if (aircraftDropdownOpen()) {
+            <div class="absolute z-30 mt-1 w-full overflow-hidden rounded-lg border border-slate-200 bg-white shadow-2xl dark:border-slate-700 dark:bg-slate-900">
+              <div class="flex flex-wrap gap-1 border-b border-slate-200 bg-slate-50 p-2 dark:border-slate-800 dark:bg-slate-950/70">
+                @for (cat of aircraftCategories; track cat) {
+                  <button
+                    type="button"
+                    (mousedown)="$event.preventDefault(); aircraftCategoryFilter.set(cat)"
+                    class="rounded px-1.5 py-0.5 text-[10px] font-medium transition"
+                    [class]="
+                      aircraftCategoryFilter() === cat
+                        ? 'bg-sky-500 font-semibold text-white dark:text-slate-950'
+                        : 'bg-slate-200 text-slate-700 hover:bg-slate-300 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700'
+                    "
+                  >
+                    {{ cat === 'ALL' ? 'Todas' : cat }}
+                  </button>
+                }
+              </div>
+
+              <div class="max-h-64 overflow-y-auto">
+                @if (visibleAircraft().length === 0) {
+                  <div class="px-3 py-3 text-xs text-slate-500 dark:text-slate-400">
+                    Nenhum modelo na lista — clique em Sugerir Rotas para usar o ICAO personalizado
+                    <span class="font-mono font-bold text-sky-600 dark:text-sky-300">{{ selectedAircraftIcao() }}</span>.
+                  </div>
+                } @else {
+                  @for (ac of visibleAircraft(); track ac.icao) {
+                    <button
+                      type="button"
+                      (mousedown)="selectAircraft(ac)"
+                      class="flex w-full items-center justify-between border-b border-slate-100 px-3 py-2 text-left text-xs hover:bg-slate-100 dark:border-slate-800/70 dark:hover:bg-slate-800"
+                      [class.bg-sky-500/10]="ac.icao === selectedAircraftIcao()"
+                    >
+                      <div class="min-w-0 pr-2">
+                        <div class="truncate">
+                          <span class="font-mono font-bold text-sky-600 dark:text-sky-300">{{ ac.icao }}</span>
+                          <span class="ml-1.5 text-slate-800 dark:text-slate-200">{{ ac.name }}</span>
+                        </div>
+                        @if (ac.aliases?.length) {
+                          <div class="truncate text-[10px] text-slate-400 dark:text-slate-500">
+                            {{ ac.aliases!.slice(0, 3).join(' · ') }}
+                          </div>
+                        }
+                      </div>
+                      <span class="shrink-0 font-mono text-[10px] text-slate-500 dark:text-slate-400">
+                        {{ ac.minRunwayFt }} ft
+                      </span>
+                    </button>
+                  }
+                  @if (filteredAircraft().length > visibleAircraft().length) {
+                    <div class="bg-slate-50 px-3 py-1.5 text-center text-[10px] text-slate-500 dark:bg-slate-950/60">
+                      Mostrando {{ visibleAircraft().length }} de {{ filteredAircraft().length | number }} — digite para filtrar
+                    </div>
+                  }
+                }
+              </div>
+            </div>
+          }
+
+          <!-- Specs pill strip -->
+          <div class="mt-2 grid grid-cols-3 gap-1.5 rounded-lg border border-slate-200 bg-slate-50 p-2 text-center dark:border-slate-800 dark:bg-slate-950/60">
+            <div>
+              <div class="text-[10px] text-slate-500">Cruzeiro</div>
+              <div class="font-mono text-xs font-semibold text-slate-800 dark:text-slate-200">
+                {{ activeAircraftProfile().cruiseKtas }} kt
+              </div>
+            </div>
+            <div>
+              <div class="text-[10px] text-slate-500">Alcance</div>
+              <div class="font-mono text-xs font-semibold text-slate-800 dark:text-slate-200">
+                {{ activeAircraftProfile().maxRangeNm | number }} NM
+              </div>
+            </div>
+            <div>
+              <div class="text-[10px] text-slate-500">FL Típico</div>
+              <div class="font-mono text-xs font-semibold text-slate-800 dark:text-slate-200">
+                {{ activeAircraftProfile().typicalCruiseAltFt >= 18000 ? 'FL' + Math.round(activeAircraftProfile().typicalCruiseAltFt / 100) : activeAircraftProfile().typicalCruiseAltFt + ' ft' }}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Runway Requirements -->
+        <div class="rounded-lg border border-slate-200 bg-slate-50/70 p-3 dark:border-slate-800 dark:bg-slate-950/40">
+          <div class="mb-2 flex items-center justify-between">
+            <span class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+              Requisitos de Pista
+            </span>
+            <span class="font-mono text-[11px] text-slate-500 dark:text-slate-400">
+              {{ Math.round(minRunwayFt() * 0.3048) | number }} m
+            </span>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <label class="text-xs text-slate-700 dark:text-slate-300" for="minRwyInput">Pista mín. (ft):</label>
+            <input
+              id="minRwyInput"
+              type="number"
+              min="0"
+              max="15000"
+              step="200"
+              [ngModel]="minRunwayFt()"
+              (ngModelChange)="minRunwayFt.set($event)"
+              class="w-24 rounded-md border border-slate-300 bg-white px-2 py-1 font-mono text-xs text-slate-900 focus:border-sky-500 focus:outline-none dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
+            />
+          </div>
+
+          <label class="mt-2.5 flex cursor-pointer items-center gap-2 text-xs text-slate-700 dark:text-slate-300">
+            <input
+              type="checkbox"
+              [ngModel]="requiresPaved()"
+              (ngModelChange)="requiresPaved.set($event)"
+              class="h-3.5 w-3.5 rounded border-slate-300 bg-white text-sky-500 focus:ring-sky-500 dark:border-slate-600 dark:bg-slate-950"
+            />
+            Exigir pista pavimentada (asfalto/concreto)
+          </label>
+        </div>
+
+        <!-- Region -->
+        <div>
+          <label class="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400" for="regionSelect">
+            Região de Destino / Busca
+          </label>
+          <select
+            id="regionSelect"
+            [ngModel]="regionId()"
+            (ngModelChange)="regionId.set($event)"
+            class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs text-slate-900 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
+          >
+            <optgroup label="País / Área Popular">
+              @for (r of areaRegions(); track r.id) {
+                <option [value]="r.id">{{ r.label }}</option>
+              }
+            </optgroup>
+            <optgroup label="Continente">
+              @for (r of continentRegions(); track r.id) {
+                <option [value]="r.id">{{ r.label }}</option>
+              }
+            </optgroup>
+          </select>
+        </div>
+
+        <!-- Optional Origin Airport -->
+        <div class="relative">
+          <div class="mb-1.5 flex items-center justify-between">
+            <label class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+              Aeroporto de Origem (Opcional)
+            </label>
+            @if (selectedOrigin()) {
+              <button
+                type="button"
+                (click)="clearOriginAirport()"
+                class="text-[11px] font-medium text-sky-600 hover:text-sky-500 dark:text-sky-400 dark:hover:text-sky-300"
+              >
+                Limpar
+              </button>
+            }
+          </div>
+
+          <input
+            type="text"
+            [ngModel]="originQuery()"
+            (ngModelChange)="onOriginInputChange($event)"
+            (blur)="closeOriginDropdownLater()"
+            placeholder="Deixe vazio ou digite ICAO / cidade..."
+            class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs text-slate-900 placeholder:text-slate-400 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100 dark:placeholder:text-slate-500"
+          />
+
+          @if (originDropdownOpen() && originSuggestions().length > 0) {
+            <div class="absolute z-30 mt-1 max-h-56 w-full overflow-y-auto rounded-lg border border-slate-200 bg-white shadow-2xl dark:border-slate-700 dark:bg-slate-900">
+              @for (ap of originSuggestions(); track ap.icao) {
+                <button
+                  type="button"
+                  (mousedown)="selectOriginAirport(ap)"
+                  class="flex w-full flex-col border-b border-slate-100 px-3 py-2 text-left hover:bg-slate-100 dark:border-slate-800/70 dark:hover:bg-slate-800"
+                >
+                  <div class="flex items-center justify-between">
+                    <span class="font-mono text-xs font-bold text-sky-600 dark:text-sky-300">
+                      {{ ap.icao }}
+                      @if (ap.iata) {
+                        <span class="font-normal text-slate-500 dark:text-slate-400">({{ ap.iata }})</span>
+                      }
+                    </span>
+                    <span class="font-mono text-[10px] text-slate-500 dark:text-slate-400">
+                      {{ ap.maxRunwayFt | number }} ft · {{ ap.country }}
+                    </span>
+                  </div>
+                  <span class="truncate text-[11px] text-slate-700 dark:text-slate-300">{{ ap.city }} — {{ ap.name }}</span>
+                </button>
+              }
+            </div>
+          }
+        </div>
+
+        <!-- Distance Controls -->
+        <div class="rounded-lg border border-slate-200 bg-slate-50/70 p-3 dark:border-slate-800 dark:bg-slate-950/40">
+          <div class="mb-2 flex items-center justify-between">
+            <span class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Distância (NM)</span>
+            <span class="font-mono text-xs font-bold text-sky-600 dark:text-sky-300">
+              {{ minDistanceNm() }} – {{ maxDistanceNm() }} NM
+            </span>
+          </div>
+
+          <input
+            type="range"
+            min="30"
+            max="5000"
+            step="25"
+            [ngModel]="maxDistanceNm()"
+            (ngModelChange)="maxDistanceNm.set($event)"
+            class="w-full accent-sky-500"
+          />
+
+          <div class="mt-2 grid grid-cols-2 gap-2">
+            <div>
+              <label class="mb-1 block text-[10px] text-slate-500 dark:text-slate-400">Mínima (NM)</label>
+              <input
+                type="number"
+                min="0"
+                max="4000"
+                step="10"
+                [ngModel]="minDistanceNm()"
+                (ngModelChange)="minDistanceNm.set($event)"
+                class="w-full rounded-md border border-slate-300 bg-white px-2 py-1 font-mono text-xs text-slate-900 focus:border-sky-500 focus:outline-none dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
+              />
+            </div>
+            <div>
+              <label class="mb-1 block text-[10px] text-slate-500 dark:text-slate-400">Máxima (NM)</label>
+              <input
+                type="number"
+                min="10"
+                max="10000"
+                step="25"
+                [ngModel]="maxDistanceNm()"
+                (ngModelChange)="maxDistanceNm.set($event)"
+                class="w-full rounded-md border border-slate-300 bg-white px-2 py-1 font-mono text-xs text-slate-900 focus:border-sky-500 focus:outline-none dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
+              />
+            </div>
+          </div>
+
+          <label class="mt-2.5 flex cursor-pointer items-center gap-2 text-xs text-slate-700 dark:text-slate-300">
+            <input
+              type="checkbox"
+              [ngModel]="respectAircraftRange()"
+              (ngModelChange)="respectAircraftRange.set($event)"
+              class="h-3.5 w-3.5 rounded border-slate-300 bg-white text-sky-500 focus:ring-sky-500 dark:border-slate-600 dark:bg-slate-950"
+            />
+            Respeitar alcance máximo da aeronave
+          </label>
+        </div>
+
+        <!-- Airport Sizes & Sorting -->
+        <div class="space-y-3">
+          <div>
+            <span class="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+              Porte dos Aeroportos
+            </span>
+            <div class="grid grid-cols-3 gap-1.5">
+              @for (size of ['large_airport', 'medium_airport', 'small_airport']; track size) {
+                <button
+                  type="button"
+                  (click)="toggleAirportSize($any(size))"
+                  class="rounded-md border px-2 py-1.5 text-xs font-medium transition"
+                  [class]="hasSize($any(size))
+                    ? 'border-sky-500/60 bg-sky-500/15 text-sky-700 dark:text-sky-200'
+                    : 'border-slate-300 bg-white text-slate-500 hover:border-slate-400 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-400 dark:hover:border-slate-700'"
+                >
+                  {{ sizeLabel($any(size)) }}
+                </button>
+              }
+            </div>
+          </div>
+
+          <div>
+            <label class="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400" for="sortSelect">
+              Ordenação das Sugestões
+            </label>
+            <select
+              id="sortSelect"
+              [ngModel]="sortBy()"
+              (ngModelChange)="sortBy.set($event)"
+              class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs text-slate-900 focus:border-sky-500 focus:outline-none dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
+            >
+              <option value="random">Aleatórias (Descoberta variada)</option>
+              <option value="hub_priority">Principais hubs primeiro</option>
+              <option value="distance_asc">Menor distância primeiro</option>
+              <option value="distance_desc">Maior distância primeiro</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Search CTA -->
+      <div class="border-t border-slate-200 bg-white/90 p-3 dark:border-slate-800 dark:bg-slate-900/90">
+        <button
+          type="button"
+          (click)="runSearch()"
+          [disabled]="searchingRoutes() || !isElectron"
+          class="flex w-full items-center justify-center gap-2 rounded-lg bg-sky-600 px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-sky-500/20 transition hover:bg-sky-500 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-sky-500 dark:text-slate-950 dark:hover:bg-sky-400"
+        >
+          @if (searchingRoutes()) {
+            <span class="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent dark:border-slate-950"></span>
+            Calculando rotas...
+          } @else {
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z" />
+            </svg>
+            Sugerir Rotas
+          }
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Right Content -->
+    <main class="flex min-w-0 flex-1 flex-col gap-3 overflow-hidden p-4">
+      <!-- Warning / Stats Banner -->
+      @if (searchResult(); as res) {
+        <div class="flex flex-wrap items-center justify-between gap-2 text-xs">
+          <div class="flex flex-wrap items-center gap-2 text-slate-700 dark:text-slate-300">
+            <span class="rounded-md border border-slate-200 bg-white px-2.5 py-1 shadow-xs dark:border-slate-800 dark:bg-slate-900">
+              <strong class="font-mono text-sky-600 dark:text-sky-300">{{ res.routes.length }}</strong> rotas exibidas
+            </span>
+            <span class="rounded-md border border-slate-200 bg-white px-2.5 py-1 text-slate-500 shadow-xs dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
+              {{ res.candidateAirportsCount | number }} aeroportos compatíveis na região
+            </span>
+          </div>
+
+          @if (res.warning) {
+            <div class="rounded-md border border-amber-500/40 bg-amber-500/10 px-2.5 py-1 text-amber-800 dark:border-amber-500/35 dark:text-amber-200">
+              {{ res.warning }}
+            </div>
+          }
+        </div>
+      }
+
+      <!-- Top Half: Map -->
+      <section class="h-[42%] min-h-[230px] w-full shrink-0">
+        <app-route-map
+          [routes]="searchResult()?.routes ?? []"
+          [selectedRoute]="selectedRoute()"
+          [theme]="theme()"
+          (routeSelected)="selectRoute($event)"
+        />
+      </section>
+
+      <!-- Bottom Half: Route List + Selected Route & METAR -->
+      <section class="grid min-h-0 flex-1 grid-cols-1 gap-3 lg:grid-cols-12">
+        <!-- Route List -->
+        <div class="flex min-h-0 flex-col rounded-xl border border-slate-200 bg-white/80 dark:border-slate-800 dark:bg-slate-900/50 lg:col-span-5">
+          <div class="flex items-center justify-between border-b border-slate-200 px-3.5 py-2.5 dark:border-slate-800">
+            <h2 class="text-xs font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-300">
+              Rotas Sugeridas
+            </h2>
+            @if (sortBy() === 'random' && (searchResult()?.routes?.length ?? 0) > 0) {
+              <button
+                type="button"
+                (click)="runSearch()"
+                class="text-[11px] font-medium text-sky-600 hover:text-sky-500 dark:text-sky-400 dark:hover:text-sky-300"
+              >
+                Sortear outras
+              </button>
+            }
+          </div>
+
+          <div class="flex-1 space-y-1.5 overflow-y-auto p-2.5">
+            @if (searchResult(); as res) {
+              @if (res.routes.length === 0) {
+                <div class="flex h-full flex-col items-center justify-center p-6 text-center text-xs text-slate-500 dark:text-slate-400">
+                  <p class="font-medium text-slate-700 dark:text-slate-300">Nenhuma rota encontrada com esses filtros.</p>
+                  <p class="mt-1 text-slate-500">
+                    Tente aumentar a distância máxima, incluir aeroportos menores ou reduzir o requisito de pista.
+                  </p>
+                </div>
+              } @else {
+                @for (route of res.routes; track route.id) {
+                  <button
+                    type="button"
+                    (click)="selectRoute(route)"
+                    class="w-full rounded-lg border p-2.5 text-left transition"
+                    [class]="selectedRoute()?.id === route.id
+                      ? 'border-sky-500/70 bg-sky-500/10 shadow-sm'
+                      : 'border-slate-200 bg-slate-50/70 hover:border-slate-300 hover:bg-slate-100 dark:border-slate-800/80 dark:bg-slate-950/60 dark:hover:border-slate-700 dark:hover:bg-slate-900'"
+                  >
+                    <div class="flex items-center justify-between gap-2">
+                      <div class="flex items-center gap-2 font-mono text-sm font-bold">
+                        <span class="text-sky-600 dark:text-sky-300">{{ route.origin.icao }}</span>
+                        <span class="text-slate-400 dark:text-slate-500">→</span>
+                        <span class="text-amber-600 dark:text-amber-300">{{ route.destination.icao }}</span>
+                      </div>
+                      <div class="flex items-center gap-2 font-mono text-xs">
+                        <span class="rounded bg-slate-200 px-1.5 py-0.5 text-slate-800 dark:bg-slate-800 dark:text-slate-200">
+                          {{ route.distanceNm }} NM
+                        </span>
+                        <span class="text-slate-500 dark:text-slate-400">{{ formatDuration(route.estimatedMinutes) }}</span>
+                      </div>
+                    </div>
+
+                    <div class="mt-1 flex items-center justify-between gap-2 text-[11px] text-slate-500 dark:text-slate-400">
+                      <span class="truncate">
+                        {{ route.origin.city }} → {{ route.destination.city }}
+                      </span>
+                      <span class="shrink-0 font-mono text-[10px] text-slate-400 dark:text-slate-500">
+                        HDG {{ String(route.bearingDeg).padStart(3, '0') }}°
+                      </span>
+                    </div>
+                  </button>
+                }
+              }
+            }
+          </div>
+        </div>
+
+        <!-- Selected Route Details & Live METAR -->
+        <div class="flex min-h-0 flex-col rounded-xl border border-slate-200 bg-white/80 dark:border-slate-800 dark:bg-slate-900/50 lg:col-span-7">
+          @if (selectedRoute(); as route) {
+            <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 px-4 py-2.5 dark:border-slate-800">
+              <div>
+                <div class="flex items-center gap-2 font-mono text-base font-bold">
+                  <span class="text-sky-600 dark:text-sky-300">{{ route.origin.icao }}</span>
+                  <span class="text-slate-400 dark:text-slate-500">→</span>
+                  <span class="text-amber-600 dark:text-amber-300">{{ route.destination.icao }}</span>
+                  <span class="rounded border border-slate-200 bg-slate-100 px-2 py-0.5 text-xs text-slate-700 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-300">
+                    {{ route.aircraft.icao }}
+                  </span>
+                </div>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400">
+                  {{ route.distanceNm }} NM · Tempo est. {{ formatDuration(route.estimatedMinutes) }} · Proa
+                  {{ String(route.bearingDeg).padStart(3, '0') }}° · Alt. sugerida
+                  {{ route.aircraft.typicalCruiseAltFt >= 18000 ? 'FL' + Math.round(route.aircraft.typicalCruiseAltFt / 100) : (route.aircraft.typicalCruiseAltFt | number) + ' ft' }}
+                </p>
+              </div>
+
+              <div class="flex flex-wrap items-center gap-2">
+                <button
+                  type="button"
+                  (click)="refreshSelectedMetar()"
+                  [disabled]="loadingMetar()"
+                  class="rounded-lg border border-slate-300 bg-white px-2.5 py-1.5 text-xs font-medium text-slate-700 transition hover:border-slate-400 hover:bg-slate-50 disabled:opacity-50 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-200 dark:hover:border-slate-600 dark:hover:bg-slate-800"
+                >
+                  Atualizar METAR
+                </button>
+                <button
+                  type="button"
+                  (click)="openSelectedInSimBrief()"
+                  class="rounded-lg border border-sky-500/40 bg-sky-500/10 px-2.5 py-1.5 text-xs font-semibold text-sky-700 transition hover:bg-sky-500/20 dark:text-sky-300"
+                >
+                  SimBrief
+                </button>
+                <button
+                  type="button"
+                  (click)="exportSelectedPln()"
+                  class="rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-emerald-500 dark:bg-emerald-500 dark:text-slate-950 dark:hover:bg-emerald-400"
+                >
+                  Exportar .PLN
+                </button>
+              </div>
+            </div>
+
+            <div class="flex-1 space-y-3 overflow-y-auto p-3.5">
+              <div class="grid grid-cols-1 gap-3 xl:grid-cols-2">
+                <app-metar-card
+                  role="ORIGEM"
+                  [airport]="route.origin"
+                  [metar]="metarMap()[route.origin.icao] ?? null"
+                  [loading]="loadingMetar()"
+                />
+                <app-metar-card
+                  role="DESTINO"
+                  [airport]="route.destination"
+                  [metar]="metarMap()[route.destination.icao] ?? null"
+                  [loading]="loadingMetar()"
+                />
+              </div>
+
+              <app-commercial-flights-card
+                [lookup]="commercialLookup()"
+                [loading]="loadingCommercial()"
+                [hasApiKey]="hasApiKey()"
+                (fetchLiveRequested)="fetchLiveCommercialFlights()"
+                (openSettingsRequested)="openApiSettings()"
+              />
+            </div>
+          } @else {
+            <div class="flex flex-1 items-center justify-center p-6 text-xs text-slate-500">
+              Selecione uma rota à esquerda para ver detalhes, mapa e METAR ao vivo.
+            </div>
+          }
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- API Key Settings Modal -->
+  @if (settingsOpen()) {
+    <div class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/65 p-4 backdrop-blur-xs">
+      <div class="w-full max-w-md rounded-2xl border border-slate-200 bg-white p-5 shadow-2xl dark:border-slate-700 dark:bg-slate-900">
+        <div class="flex items-center justify-between border-b border-slate-200 pb-3 dark:border-slate-800">
+          <div>
+            <h3 class="text-sm font-bold text-slate-900 dark:text-slate-100">
+              API de Voos Comerciais (Opcional)
+            </h3>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400">
+              Para consultar números de voo reais na rota selecionada
+            </p>
+          </div>
+          <button
+            type="button"
+            (click)="settingsOpen.set(false)"
+            class="rounded-md px-2 py-1 text-xs text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800"
+          >
+            ✕
+          </button>
+        </div>
+
+        <div class="mt-4 space-y-3 text-xs">
+          <div>
+            <label class="mb-1.5 block font-semibold text-slate-700 dark:text-slate-300">Provedor</label>
+            <div class="grid grid-cols-2 gap-2">
+              <button
+                type="button"
+                (click)="apiProviderDraft.set('airlabs')"
+                class="rounded-lg border p-2.5 text-left transition"
+                [class]="apiProviderDraft() === 'airlabs'
+                  ? 'border-indigo-500 bg-indigo-500/10 text-indigo-700 dark:text-indigo-200'
+                  : 'border-slate-200 bg-slate-50 text-slate-700 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-300'"
+              >
+                <div class="font-semibold">AirLabs</div>
+                <div class="text-[10px] opacity-80">1.000 req/mês grátis</div>
+              </button>
+              <button
+                type="button"
+                (click)="apiProviderDraft.set('aviationstack')"
+                class="rounded-lg border p-2.5 text-left transition"
+                [class]="apiProviderDraft() === 'aviationstack'
+                  ? 'border-indigo-500 bg-indigo-500/10 text-indigo-700 dark:text-indigo-200'
+                  : 'border-slate-200 bg-slate-50 text-slate-700 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-300'"
+              >
+                <div class="font-semibold">Aviationstack</div>
+                <div class="text-[10px] opacity-80">Plano grátis (voos ativos)</div>
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <div class="mb-1 flex items-center justify-between">
+              <label class="font-semibold text-slate-700 dark:text-slate-300" for="apiKeyInput">
+                Sua API Key
+              </label>
+              <button
+                type="button"
+                (click)="showApiKey.set(!showApiKey())"
+                class="text-[11px] text-sky-600 hover:underline dark:text-sky-400"
+              >
+                {{ showApiKey() ? 'Ocultar' : 'Mostrar' }}
+              </button>
+            </div>
+            <input
+              id="apiKeyInput"
+              [type]="showApiKey() ? 'text' : 'password'"
+              [ngModel]="apiKeyDraft()"
+              (ngModelChange)="apiKeyDraft.set($event)"
+              placeholder="Cole aqui sua chave da API..."
+              class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 font-mono text-xs text-slate-900 focus:border-indigo-500 focus:outline-none dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
+            />
+            <p class="mt-1.5 text-[11px] leading-relaxed text-slate-500 dark:text-slate-400">
+              A chave fica salva apenas localmente no seu PC e só é usada quando você clicar em
+              <strong>Buscar Nº dos Voos (Ao Vivo)</strong>. Sem chave, o app continua usando a base offline OpenFlights.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-5 flex items-center justify-end gap-2 border-t border-slate-200 pt-3 dark:border-slate-800">
+          <button
+            type="button"
+            (click)="settingsOpen.set(false)"
+            class="rounded-lg border border-slate-300 px-3 py-1.5 text-xs font-medium text-slate-700 hover:bg-slate-50 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800"
+          >
+            Cancelar
+          </button>
+          <button
+            type="button"
+            (click)="saveApiSettings()"
+            class="rounded-lg bg-indigo-600 px-4 py-1.5 text-xs font-semibold text-white hover:bg-indigo-500 dark:bg-indigo-500 dark:text-slate-950 dark:hover:bg-indigo-400"
+          >
+            Salvar
+          </button>
+        </div>
+      </div>
+    </div>
+  }
+
+  <!-- Toast notification -->
+  @if (toastMessage()) {
+    <div class="fixed bottom-4 right-4 z-50 rounded-lg border border-emerald-500/40 bg-white px-4 py-2.5 text-xs text-emerald-700 shadow-2xl dark:bg-slate-900 dark:text-emerald-200">
+      {{ toastMessage() }}
+    </div>
+  }
+</div>

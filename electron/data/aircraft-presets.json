@@ -1,0 +1,1722 @@
+[
+  {
+    "icao": "C150",
+    "name": "Cessna 150",
+    "category": "Piston",
+    "cruiseKtas": 100,
+    "maxRangeNm": 400,
+    "minRunwayFt": 1400,
+    "requiresPaved": false,
+    "typicalCruiseAltFt": 5500
+  },
+  {
+    "icao": "C152",
+    "name": "Cessna 152",
+    "category": "Piston",
+    "cruiseKtas": 105,
+    "maxRangeNm": 415,
+    "minRunwayFt": 1400,
+    "requiresPaved": false,
+    "typicalCruiseAltFt": 5500
+  },
+  {
+    "icao": "C162",
+    "name": "Cessna 162 Skycatcher",
+    "category": "Piston",
+    "cruiseKtas": 112,
+    "maxRangeNm": 440,
+    "minRunwayFt": 1250,
+    "requiresPaved": false,
+    "typicalCruiseAltFt": 5500
+  },
+  {
+    "icao": "C170",
+    "name": "Cessna 170",
+    "category": "Piston",
+    "cruiseKtas": 105,
+    "maxRangeNm": 450,
+    "minRunwayFt": 1200,
+    "requiresPaved": false,
+    "typicalCruiseAltFt": 5500
+  },
+  {
+    "icao": "C172",
+    "name": "Cessna 172 Skyhawk",
+    "category": "Piston",
+    "cruiseKtas": 122,
+    "maxRangeNm": 640,
+    "minRunwayFt": 1700,
+    "requiresPaved": false,
+    "typicalCruiseAltFt": 7500
+  },
+  {
+    "icao": "C182",
+    "name": "Cessna 182 Skylane",
+    "category": "Piston",
+    "cruiseKtas": 145,
+    "maxRangeNm": 915,
+    "minRunwayFt": 1600,
+    "requiresPaved": false,
+    "typicalCruiseAltFt": 8500
+  },
+  {
+    "icao": "C185",
+    "name": "Cessna 185 Skywagon",
+    "category": "Utility / Bush",
+    "cruiseKtas": 146,
+    "maxRangeNm": 720,
+    "minRunwayFt": 1200,
+    "requiresPaved": false,
+    "typicalCruiseAltFt": 7500
+  },
+  {
+    "icao": "C206",
+    "name": "Cessna 206 Stationair",
+    "category": "Piston",
+    "cruiseKtas": 150,
+    "maxRangeNm": 730,
+    "minRunwayFt": 1800,
+    "requiresPaved": false,
+    "typicalCruiseAltFt": 8500
+  },
+  {
+    "icao": "C210",
+    "name": "Cessna 210 Centurion",
+    "category": "Piston",
+    "cruiseKtas": 190,
+    "maxRangeNm": 900,
+    "minRunwayFt": 2100,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 12500
+  },
+  {
+    "icao": "C310",
+    "name": "Cessna 310R",
+    "category": "Piston",
+    "cruiseKtas": 195,
+    "maxRangeNm": 1150,
+    "minRunwayFt": 2300,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 11500
+  },
+  {
+    "icao": "C337",
+    "name": "Cessna 337 Skymaster",
+    "category": "Piston",
+    "cruiseKtas": 170,
+    "maxRangeNm": 1000,
+    "minRunwayFt": 1800,
+    "requiresPaved": false,
+    "typicalCruiseAltFt": 10500
+  },
+  {
+    "icao": "C414",
+    "name": "Cessna 414AW Chancellor",
+    "category": "Piston",
+    "cruiseKtas": 225,
+    "maxRangeNm": 1320,
+    "minRunwayFt": 2600,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 18000
+  },
+  {
+    "icao": "P28A",
+    "name": "Piper PA-28 Cherokee / Archer / Warrior",
+    "category": "Piston",
+    "cruiseKtas": 125,
+    "maxRangeNm": 520,
+    "minRunwayFt": 1700,
+    "requiresPaved": false,
+    "typicalCruiseAltFt": 7500
+  },
+  {
+    "icao": "P28R",
+    "name": "Piper PA-28R Arrow",
+    "category": "Piston",
+    "cruiseKtas": 138,
+    "maxRangeNm": 700,
+    "minRunwayFt": 1800,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 8500
+  },
+  {
+    "icao": "P28B",
+    "name": "Piper PA-28-236 Dakota",
+    "category": "Piston",
+    "cruiseKtas": 144,
+    "maxRangeNm": 720,
+    "minRunwayFt": 1700,
+    "requiresPaved": false,
+    "typicalCruiseAltFt": 8500
+  },
+  {
+    "icao": "PA18",
+    "name": "Piper PA-18 Super Cub",
+    "category": "Utility / Bush",
+    "cruiseKtas": 98,
+    "maxRangeNm": 400,
+    "minRunwayFt": 550,
+    "requiresPaved": false,
+    "typicalCruiseAltFt": 4500
+  },
+  {
+    "icao": "PA24",
+    "name": "Piper PA-24 Comanche 250",
+    "category": "Piston",
+    "cruiseKtas": 160,
+    "maxRangeNm": 1050,
+    "minRunwayFt": 1900,
+    "requiresPaved": false,
+    "typicalCruiseAltFt": 9500
+  },
+  {
+    "icao": "PA31",
+    "name": "Piper PA-31 Navajo / Chieftain",
+    "category": "Piston",
+    "cruiseKtas": 215,
+    "maxRangeNm": 1000,
+    "minRunwayFt": 2500,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 14000
+  },
+  {
+    "icao": "PA32",
+    "name": "Piper PA-32 Saratoga",
+    "category": "Piston",
+    "cruiseKtas": 165,
+    "maxRangeNm": 820,
+    "minRunwayFt": 2000,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 9500
+  },
+  {
+    "icao": "PA34",
+    "name": "Piper PA-34 Seneca",
+    "category": "Piston",
+    "cruiseKtas": 185,
+    "maxRangeNm": 870,
+    "minRunwayFt": 2200,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 11500
+  },
+  {
+    "icao": "PA44",
+    "name": "Piper PA-44 Seminole",
+    "category": "Piston",
+    "cruiseKtas": 162,
+    "maxRangeNm": 770,
+    "minRunwayFt": 2200,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 9500
+  },
+  {
+    "icao": "PA46",
+    "name": "Piper PA-46 Malibu / Matrix",
+    "category": "Piston",
+    "cruiseKtas": 215,
+    "maxRangeNm": 1340,
+    "minRunwayFt": 2400,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 19000
+  },
+  {
+    "icao": "DA20",
+    "name": "Diamond DA20 Katana",
+    "category": "Piston",
+    "cruiseKtas": 125,
+    "maxRangeNm": 540,
+    "minRunwayFt": 1650,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 6500
+  },
+  {
+    "icao": "DA40",
+    "name": "Diamond DA40 NG",
+    "category": "Piston",
+    "cruiseKtas": 135,
+    "maxRangeNm": 720,
+    "minRunwayFt": 1800,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 8500
+  },
+  {
+    "icao": "DA42",
+    "name": "Diamond DA42 Twin Star",
+    "category": "Piston",
+    "cruiseKtas": 175,
+    "maxRangeNm": 1200,
+    "minRunwayFt": 2300,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 12000
+  },
+  {
+    "icao": "DA62",
+    "name": "Diamond DA62",
+    "category": "Piston",
+    "cruiseKtas": 185,
+    "maxRangeNm": 1280,
+    "minRunwayFt": 2600,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 14000
+  },
+  {
+    "icao": "SR20",
+    "name": "Cirrus SR20",
+    "category": "Piston",
+    "cruiseKtas": 155,
+    "maxRangeNm": 785,
+    "minRunwayFt": 2000,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 9500
+  },
+  {
+    "icao": "SR22",
+    "name": "Cirrus SR22 / SR22T",
+    "category": "Piston",
+    "cruiseKtas": 210,
+    "maxRangeNm": 1020,
+    "minRunwayFt": 2200,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 15000
+  },
+  {
+    "icao": "BE33",
+    "name": "Beechcraft Debonair / F33A Bonanza",
+    "category": "Piston",
+    "cruiseKtas": 165,
+    "maxRangeNm": 850,
+    "minRunwayFt": 2000,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 9500
+  },
+  {
+    "icao": "BE35",
+    "name": "Beechcraft V35 Bonanza",
+    "category": "Piston",
+    "cruiseKtas": 172,
+    "maxRangeNm": 880,
+    "minRunwayFt": 2000,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 9500
+  },
+  {
+    "icao": "BE36",
+    "name": "Beechcraft Bonanza G36",
+    "category": "Piston",
+    "cruiseKtas": 174,
+    "maxRangeNm": 920,
+    "minRunwayFt": 2100,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 10500
+  },
+  {
+    "icao": "BE55",
+    "name": "Beechcraft Baron 55",
+    "category": "Piston",
+    "cruiseKtas": 190,
+    "maxRangeNm": 1050,
+    "minRunwayFt": 2200,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 10500
+  },
+  {
+    "icao": "BE58",
+    "name": "Beechcraft Baron G58",
+    "category": "Piston",
+    "cruiseKtas": 200,
+    "maxRangeNm": 1480,
+    "minRunwayFt": 2400,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 11500
+  },
+  {
+    "icao": "M20P",
+    "name": "Mooney M20R Ovation",
+    "category": "Piston",
+    "cruiseKtas": 185,
+    "maxRangeNm": 1150,
+    "minRunwayFt": 2100,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 11500
+  },
+  {
+    "icao": "DR40",
+    "name": "Robin DR400",
+    "category": "Piston",
+    "cruiseKtas": 120,
+    "maxRangeNm": 560,
+    "minRunwayFt": 1500,
+    "requiresPaved": false,
+    "typicalCruiseAltFt": 6500
+  },
+  {
+    "icao": "P06T",
+    "name": "Tecnam P2006T",
+    "category": "Piston",
+    "cruiseKtas": 145,
+    "maxRangeNm": 670,
+    "minRunwayFt": 1600,
+    "requiresPaved": false,
+    "typicalCruiseAltFt": 8500
+  },
+  {
+    "icao": "RV10",
+    "name": "Van's RV-10",
+    "category": "Piston",
+    "cruiseKtas": 175,
+    "maxRangeNm": 800,
+    "minRunwayFt": 1400,
+    "requiresPaved": false,
+    "typicalCruiseAltFt": 9500
+  },
+  {
+    "icao": "DC3",
+    "name": "Douglas DC-3 / C-47",
+    "category": "Piston",
+    "cruiseKtas": 165,
+    "maxRangeNm": 1300,
+    "minRunwayFt": 2800,
+    "requiresPaved": false,
+    "typicalCruiseAltFt": 9500
+  },
+  {
+    "icao": "DC6",
+    "name": "Douglas DC-6A / DC-6B",
+    "category": "Piston",
+    "cruiseKtas": 250,
+    "maxRangeNm": 2600,
+    "minRunwayFt": 4500,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 18000
+  },
+  {
+    "icao": "CONI",
+    "name": "Lockheed L-1049 Super Constellation",
+    "category": "Piston",
+    "cruiseKtas": 280,
+    "maxRangeNm": 4000,
+    "minRunwayFt": 5500,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 20000
+  },
+  {
+    "icao": "CC19",
+    "name": "CubCrafters XCub / NXCub",
+    "category": "Utility / Bush",
+    "cruiseKtas": 125,
+    "maxRangeNm": 700,
+    "minRunwayFt": 600,
+    "requiresPaved": false,
+    "typicalCruiseAltFt": 5500
+  },
+  {
+    "icao": "PC6T",
+    "name": "Pilatus PC-6 Turbo Porter",
+    "category": "Utility / Bush",
+    "cruiseKtas": 115,
+    "maxRangeNm": 500,
+    "minRunwayFt": 800,
+    "requiresPaved": false,
+    "typicalCruiseAltFt": 8500
+  },
+  {
+    "icao": "DHC2",
+    "name": "De Havilland DHC-2 Beaver",
+    "category": "Utility / Bush",
+    "cruiseKtas": 125,
+    "maxRangeNm": 450,
+    "minRunwayFt": 1000,
+    "requiresPaved": false,
+    "typicalCruiseAltFt": 6500
+  },
+  {
+    "icao": "DHC3",
+    "name": "De Havilland DHC-3 Otter",
+    "category": "Utility / Bush",
+    "cruiseKtas": 120,
+    "maxRangeNm": 800,
+    "minRunwayFt": 1200,
+    "requiresPaved": false,
+    "typicalCruiseAltFt": 7500
+  },
+  {
+    "icao": "DHC4",
+    "name": "De Havilland DHC-4 Caribou",
+    "category": "Utility / Bush",
+    "cruiseKtas": 160,
+    "maxRangeNm": 1100,
+    "minRunwayFt": 1300,
+    "requiresPaved": false,
+    "typicalCruiseAltFt": 9500
+  },
+  {
+    "icao": "DHC6",
+    "name": "De Havilland DHC-6 Twin Otter",
+    "category": "Utility / Bush",
+    "cruiseKtas": 170,
+    "maxRangeNm": 775,
+    "minRunwayFt": 1300,
+    "requiresPaved": false,
+    "typicalCruiseAltFt": 10000
+  },
+  {
+    "icao": "KODI",
+    "name": "Daher Kodiak 100",
+    "category": "Utility / Bush",
+    "cruiseKtas": 174,
+    "maxRangeNm": 1130,
+    "minRunwayFt": 1100,
+    "requiresPaved": false,
+    "typicalCruiseAltFt": 11500
+  },
+  {
+    "icao": "BN2P",
+    "name": "Britten-Norman BN-2 Islander",
+    "category": "Utility / Bush",
+    "cruiseKtas": 140,
+    "maxRangeNm": 750,
+    "minRunwayFt": 1250,
+    "requiresPaved": false,
+    "typicalCruiseAltFt": 7500
+  },
+  {
+    "icao": "CL2T",
+    "name": "Canadair / De Havilland CL-415",
+    "category": "Utility / Bush",
+    "cruiseKtas": 180,
+    "maxRangeNm": 1300,
+    "minRunwayFt": 2800,
+    "requiresPaved": false,
+    "typicalCruiseAltFt": 10000
+  },
+  {
+    "icao": "AN2",
+    "name": "Antonov An-2",
+    "category": "Utility / Bush",
+    "cruiseKtas": 100,
+    "maxRangeNm": 450,
+    "minRunwayFt": 800,
+    "requiresPaved": false,
+    "typicalCruiseAltFt": 5500
+  },
+  {
+    "icao": "C208",
+    "name": "Cessna 208B Grand Caravan",
+    "category": "Turboprop",
+    "cruiseKtas": 184,
+    "maxRangeNm": 1070,
+    "minRunwayFt": 2200,
+    "requiresPaved": false,
+    "typicalCruiseAltFt": 11500
+  },
+  {
+    "icao": "C408",
+    "name": "Cessna 408 SkyCourier",
+    "category": "Turboprop",
+    "cruiseKtas": 210,
+    "maxRangeNm": 900,
+    "minRunwayFt": 3300,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 14000
+  },
+  {
+    "icao": "P46T",
+    "name": "Piper M500 / M600 / Meridian",
+    "category": "Turboprop",
+    "cruiseKtas": 265,
+    "maxRangeNm": 1400,
+    "minRunwayFt": 2500,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 27000
+  },
+  {
+    "icao": "PC12",
+    "name": "Pilatus PC-12 / PC-12 NGX",
+    "category": "Turboprop",
+    "cruiseKtas": 285,
+    "maxRangeNm": 1800,
+    "minRunwayFt": 2650,
+    "requiresPaved": false,
+    "typicalCruiseAltFt": 26000
+  },
+  {
+    "icao": "TBM8",
+    "name": "Socata / Daher TBM 850",
+    "category": "Turboprop",
+    "cruiseKtas": 320,
+    "maxRangeNm": 1520,
+    "minRunwayFt": 2500,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 28000
+  },
+  {
+    "icao": "TBM9",
+    "name": "Daher TBM 930 / 960",
+    "category": "Turboprop",
+    "cruiseKtas": 330,
+    "maxRangeNm": 1730,
+    "minRunwayFt": 2500,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 29000
+  },
+  {
+    "icao": "BE9L",
+    "name": "Beechcraft King Air C90",
+    "category": "Turboprop",
+    "cruiseKtas": 245,
+    "maxRangeNm": 1260,
+    "minRunwayFt": 2800,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 22000
+  },
+  {
+    "icao": "BE20",
+    "name": "Beechcraft King Air B200",
+    "category": "Turboprop",
+    "cruiseKtas": 285,
+    "maxRangeNm": 1580,
+    "minRunwayFt": 3000,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 26000
+  },
+  {
+    "icao": "B350",
+    "name": "Beechcraft King Air 350i",
+    "category": "Turboprop",
+    "cruiseKtas": 310,
+    "maxRangeNm": 1800,
+    "minRunwayFt": 3300,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 28000
+  },
+  {
+    "icao": "B190",
+    "name": "Beechcraft 1900D",
+    "category": "Turboprop",
+    "cruiseKtas": 280,
+    "maxRangeNm": 1240,
+    "minRunwayFt": 3800,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 22000
+  },
+  {
+    "icao": "E110",
+    "name": "Embraer EMB-110 Bandeirante",
+    "category": "Turboprop",
+    "cruiseKtas": 220,
+    "maxRangeNm": 1025,
+    "minRunwayFt": 3000,
+    "requiresPaved": false,
+    "typicalCruiseAltFt": 14000
+  },
+  {
+    "icao": "E120",
+    "name": "Embraer EMB-120 Brasilia",
+    "category": "Turboprop",
+    "cruiseKtas": 300,
+    "maxRangeNm": 950,
+    "minRunwayFt": 4600,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 24000
+  },
+  {
+    "icao": "C130",
+    "name": "Lockheed C-130 / L-100 Hercules",
+    "category": "Turboprop",
+    "cruiseKtas": 290,
+    "maxRangeNm": 2050,
+    "minRunwayFt": 3600,
+    "requiresPaved": false,
+    "typicalCruiseAltFt": 22000
+  },
+  {
+    "icao": "A400",
+    "name": "Airbus A400M Atlas",
+    "category": "Turboprop",
+    "cruiseKtas": 420,
+    "maxRangeNm": 4700,
+    "minRunwayFt": 3800,
+    "requiresPaved": false,
+    "typicalCruiseAltFt": 33000
+  },
+  {
+    "icao": "SF50",
+    "name": "Cirrus SF50 Vision Jet",
+    "category": "Business Jet",
+    "cruiseKtas": 305,
+    "maxRangeNm": 1275,
+    "minRunwayFt": 3200,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 28000
+  },
+  {
+    "icao": "HDJT",
+    "name": "HondaJet HA-420",
+    "category": "Business Jet",
+    "cruiseKtas": 420,
+    "maxRangeNm": 1540,
+    "minRunwayFt": 3500,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 38000
+  },
+  {
+    "icao": "E50P",
+    "name": "Embraer Phenom 100",
+    "category": "Business Jet",
+    "cruiseKtas": 390,
+    "maxRangeNm": 1178,
+    "minRunwayFt": 3200,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 37000
+  },
+  {
+    "icao": "E55P",
+    "name": "Embraer Phenom 300",
+    "category": "Business Jet",
+    "cruiseKtas": 453,
+    "maxRangeNm": 2010,
+    "minRunwayFt": 3250,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 41000
+  },
+  {
+    "icao": "E35L",
+    "name": "Embraer Legacy 600 / 650",
+    "category": "Business Jet",
+    "cruiseKtas": 450,
+    "maxRangeNm": 3900,
+    "minRunwayFt": 5600,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 41000
+  },
+  {
+    "icao": "C510",
+    "name": "Cessna Citation Mustang",
+    "category": "Business Jet",
+    "cruiseKtas": 340,
+    "maxRangeNm": 1150,
+    "minRunwayFt": 3150,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 36000
+  },
+  {
+    "icao": "C25A",
+    "name": "Cessna Citation CJ2",
+    "category": "Business Jet",
+    "cruiseKtas": 415,
+    "maxRangeNm": 1615,
+    "minRunwayFt": 3400,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 39000
+  },
+  {
+    "icao": "C25B",
+    "name": "Cessna Citation CJ3",
+    "category": "Business Jet",
+    "cruiseKtas": 416,
+    "maxRangeNm": 2040,
+    "minRunwayFt": 3200,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 41000
+  },
+  {
+    "icao": "C25C",
+    "name": "Cessna Citation CJ4",
+    "category": "Business Jet",
+    "cruiseKtas": 450,
+    "maxRangeNm": 2165,
+    "minRunwayFt": 3450,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 41000
+  },
+  {
+    "icao": "C56X",
+    "name": "Cessna Citation Excel / XLS",
+    "category": "Business Jet",
+    "cruiseKtas": 440,
+    "maxRangeNm": 2100,
+    "minRunwayFt": 3600,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 41000
+  },
+  {
+    "icao": "C680",
+    "name": "Cessna Citation Sovereign",
+    "category": "Business Jet",
+    "cruiseKtas": 460,
+    "maxRangeNm": 3200,
+    "minRunwayFt": 3600,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 43000
+  },
+  {
+    "icao": "C700",
+    "name": "Cessna Citation Longitude",
+    "category": "Business Jet",
+    "cruiseKtas": 476,
+    "maxRangeNm": 3500,
+    "minRunwayFt": 4850,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 43000
+  },
+  {
+    "icao": "C750",
+    "name": "Cessna Citation X",
+    "category": "Business Jet",
+    "cruiseKtas": 525,
+    "maxRangeNm": 3460,
+    "minRunwayFt": 5250,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 45000
+  },
+  {
+    "icao": "PC24",
+    "name": "Pilatus PC-24",
+    "category": "Business Jet",
+    "cruiseKtas": 440,
+    "maxRangeNm": 2000,
+    "minRunwayFt": 3000,
+    "requiresPaved": false,
+    "typicalCruiseAltFt": 41000
+  },
+  {
+    "icao": "LJ35",
+    "name": "Learjet 35A",
+    "category": "Business Jet",
+    "cruiseKtas": 460,
+    "maxRangeNm": 2050,
+    "minRunwayFt": 4900,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 41000
+  },
+  {
+    "icao": "LJ60",
+    "name": "Learjet 60",
+    "category": "Business Jet",
+    "cruiseKtas": 455,
+    "maxRangeNm": 2400,
+    "minRunwayFt": 5450,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 43000
+  },
+  {
+    "icao": "CL30",
+    "name": "Bombardier Challenger 300 / 350",
+    "category": "Business Jet",
+    "cruiseKtas": 470,
+    "maxRangeNm": 3200,
+    "minRunwayFt": 4850,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 43000
+  },
+  {
+    "icao": "CL60",
+    "name": "Bombardier Challenger 650",
+    "category": "Business Jet",
+    "cruiseKtas": 470,
+    "maxRangeNm": 4000,
+    "minRunwayFt": 5650,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 41000
+  },
+  {
+    "icao": "GLEX",
+    "name": "Bombardier Global Express / 6000",
+    "category": "Business Jet",
+    "cruiseKtas": 490,
+    "maxRangeNm": 6000,
+    "minRunwayFt": 6400,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 45000
+  },
+  {
+    "icao": "GLF4",
+    "name": "Gulfstream IV / G450",
+    "category": "Business Jet",
+    "cruiseKtas": 460,
+    "maxRangeNm": 4350,
+    "minRunwayFt": 5450,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 43000
+  },
+  {
+    "icao": "GLF5",
+    "name": "Gulfstream V / G550",
+    "category": "Business Jet",
+    "cruiseKtas": 488,
+    "maxRangeNm": 6750,
+    "minRunwayFt": 5900,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 45000
+  },
+  {
+    "icao": "GLF6",
+    "name": "Gulfstream G650",
+    "category": "Business Jet",
+    "cruiseKtas": 516,
+    "maxRangeNm": 7000,
+    "minRunwayFt": 5850,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 45000
+  },
+  {
+    "icao": "FA50",
+    "name": "Dassault Falcon 50",
+    "category": "Business Jet",
+    "cruiseKtas": 460,
+    "maxRangeNm": 3100,
+    "minRunwayFt": 4900,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 41000
+  },
+  {
+    "icao": "F900",
+    "name": "Dassault Falcon 900",
+    "category": "Business Jet",
+    "cruiseKtas": 470,
+    "maxRangeNm": 4750,
+    "minRunwayFt": 5000,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 43000
+  },
+  {
+    "icao": "FA7X",
+    "name": "Dassault Falcon 7X",
+    "category": "Business Jet",
+    "cruiseKtas": 488,
+    "maxRangeNm": 5950,
+    "minRunwayFt": 5700,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 45000
+  },
+  {
+    "icao": "AT45",
+    "name": "ATR 42-500",
+    "category": "Regional",
+    "cruiseKtas": 300,
+    "maxRangeNm": 840,
+    "minRunwayFt": 3800,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 22000
+  },
+  {
+    "icao": "AT46",
+    "name": "ATR 42-600",
+    "category": "Regional",
+    "cruiseKtas": 300,
+    "maxRangeNm": 716,
+    "minRunwayFt": 3650,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 22000
+  },
+  {
+    "icao": "AT75",
+    "name": "ATR 72-500",
+    "category": "Regional",
+    "cruiseKtas": 275,
+    "maxRangeNm": 825,
+    "minRunwayFt": 4400,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 22000
+  },
+  {
+    "icao": "AT76",
+    "name": "ATR 72-600",
+    "category": "Regional",
+    "cruiseKtas": 275,
+    "maxRangeNm": 825,
+    "minRunwayFt": 4400,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 22000
+  },
+  {
+    "icao": "DH8A",
+    "name": "De Havilland Dash 8-100 / 200",
+    "category": "Regional",
+    "cruiseKtas": 270,
+    "maxRangeNm": 925,
+    "minRunwayFt": 3200,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 22000
+  },
+  {
+    "icao": "DH8C",
+    "name": "De Havilland Dash 8-300",
+    "category": "Regional",
+    "cruiseKtas": 285,
+    "maxRangeNm": 920,
+    "minRunwayFt": 3850,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 23000
+  },
+  {
+    "icao": "DH8D",
+    "name": "De Havilland Dash 8 Q400",
+    "category": "Regional",
+    "cruiseKtas": 360,
+    "maxRangeNm": 1100,
+    "minRunwayFt": 4600,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 25000
+  },
+  {
+    "icao": "SF34",
+    "name": "Saab 340B",
+    "category": "Regional",
+    "cruiseKtas": 270,
+    "maxRangeNm": 935,
+    "minRunwayFt": 4200,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 22000
+  },
+  {
+    "icao": "JS32",
+    "name": "BAe Jetstream 32",
+    "category": "Regional",
+    "cruiseKtas": 265,
+    "maxRangeNm": 680,
+    "minRunwayFt": 4100,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 20000
+  },
+  {
+    "icao": "F50",
+    "name": "Fokker 50",
+    "category": "Regional",
+    "cruiseKtas": 280,
+    "maxRangeNm": 1100,
+    "minRunwayFt": 4500,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 22000
+  },
+  {
+    "icao": "F28",
+    "name": "Fokker F28 Fellowship",
+    "category": "Regional",
+    "cruiseKtas": 420,
+    "maxRangeNm": 1100,
+    "minRunwayFt": 5200,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 31000
+  },
+  {
+    "icao": "F70",
+    "name": "Fokker 70",
+    "category": "Regional",
+    "cruiseKtas": 430,
+    "maxRangeNm": 1840,
+    "minRunwayFt": 4600,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 33000
+  },
+  {
+    "icao": "F100",
+    "name": "Fokker 100",
+    "category": "Regional",
+    "cruiseKtas": 430,
+    "maxRangeNm": 1710,
+    "minRunwayFt": 5300,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 33000
+  },
+  {
+    "icao": "CRJ2",
+    "name": "Bombardier CRJ-200",
+    "category": "Regional",
+    "cruiseKtas": 440,
+    "maxRangeNm": 1700,
+    "minRunwayFt": 5800,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 35000
+  },
+  {
+    "icao": "CRJ7",
+    "name": "Bombardier CRJ-700",
+    "category": "Regional",
+    "cruiseKtas": 447,
+    "maxRangeNm": 1378,
+    "minRunwayFt": 5300,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 35000
+  },
+  {
+    "icao": "CRJ9",
+    "name": "Bombardier CRJ-900",
+    "category": "Regional",
+    "cruiseKtas": 447,
+    "maxRangeNm": 1550,
+    "minRunwayFt": 6000,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 36000
+  },
+  {
+    "icao": "CRJX",
+    "name": "Bombardier CRJ-1000",
+    "category": "Regional",
+    "cruiseKtas": 447,
+    "maxRangeNm": 1620,
+    "minRunwayFt": 6400,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 36000
+  },
+  {
+    "icao": "E135",
+    "name": "Embraer ERJ-135 / ERJ-140",
+    "category": "Regional",
+    "cruiseKtas": 445,
+    "maxRangeNm": 1750,
+    "minRunwayFt": 5600,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 35000
+  },
+  {
+    "icao": "E145",
+    "name": "Embraer ERJ-145",
+    "category": "Regional",
+    "cruiseKtas": 445,
+    "maxRangeNm": 1550,
+    "minRunwayFt": 6000,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 35000
+  },
+  {
+    "icao": "E170",
+    "name": "Embraer E170",
+    "category": "Regional",
+    "cruiseKtas": 445,
+    "maxRangeNm": 2150,
+    "minRunwayFt": 5400,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 35000
+  },
+  {
+    "icao": "E75L",
+    "name": "Embraer E175 (Long Wing)",
+    "category": "Regional",
+    "cruiseKtas": 447,
+    "maxRangeNm": 2200,
+    "minRunwayFt": 5600,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 36000
+  },
+  {
+    "icao": "E190",
+    "name": "Embraer E190",
+    "category": "Regional",
+    "cruiseKtas": 447,
+    "maxRangeNm": 2450,
+    "minRunwayFt": 5500,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 36000
+  },
+  {
+    "icao": "E195",
+    "name": "Embraer E195",
+    "category": "Regional",
+    "cruiseKtas": 447,
+    "maxRangeNm": 2300,
+    "minRunwayFt": 6000,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 36000
+  },
+  {
+    "icao": "E295",
+    "name": "Embraer E195-E2",
+    "category": "Regional",
+    "cruiseKtas": 455,
+    "maxRangeNm": 2600,
+    "minRunwayFt": 5900,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 37000
+  },
+  {
+    "icao": "B461",
+    "name": "BAe 146-100 / Avro RJ70",
+    "category": "Regional",
+    "cruiseKtas": 420,
+    "maxRangeNm": 1500,
+    "minRunwayFt": 3900,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 31000
+  },
+  {
+    "icao": "B462",
+    "name": "BAe 146-200 / Avro RJ85",
+    "category": "Regional",
+    "cruiseKtas": 420,
+    "maxRangeNm": 1600,
+    "minRunwayFt": 4200,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 31000
+  },
+  {
+    "icao": "B463",
+    "name": "BAe 146-300 / Avro RJ100",
+    "category": "Regional",
+    "cruiseKtas": 420,
+    "maxRangeNm": 1600,
+    "minRunwayFt": 4500,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 31000
+  },
+  {
+    "icao": "RJ85",
+    "name": "Avro RJ85",
+    "category": "Regional",
+    "cruiseKtas": 420,
+    "maxRangeNm": 1600,
+    "minRunwayFt": 4200,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 31000
+  },
+  {
+    "icao": "RJ1H",
+    "name": "Avro RJ100",
+    "category": "Regional",
+    "cruiseKtas": 420,
+    "maxRangeNm": 1490,
+    "minRunwayFt": 4500,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 31000
+  },
+  {
+    "icao": "BCS1",
+    "name": "Airbus A220-100",
+    "category": "Narrowbody",
+    "cruiseKtas": 447,
+    "maxRangeNm": 3400,
+    "minRunwayFt": 4800,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 37000
+  },
+  {
+    "icao": "BCS3",
+    "name": "Airbus A220-300",
+    "category": "Narrowbody",
+    "cruiseKtas": 447,
+    "maxRangeNm": 3350,
+    "minRunwayFt": 5300,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 37000
+  },
+  {
+    "icao": "A318",
+    "name": "Airbus A318",
+    "category": "Narrowbody",
+    "cruiseKtas": 447,
+    "maxRangeNm": 3100,
+    "minRunwayFt": 5200,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 36000
+  },
+  {
+    "icao": "A319",
+    "name": "Airbus A319ceo",
+    "category": "Narrowbody",
+    "cruiseKtas": 450,
+    "maxRangeNm": 3750,
+    "minRunwayFt": 5800,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 36000
+  },
+  {
+    "icao": "A19N",
+    "name": "Airbus A319neo",
+    "category": "Narrowbody",
+    "cruiseKtas": 453,
+    "maxRangeNm": 3700,
+    "minRunwayFt": 5600,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 36000
+  },
+  {
+    "icao": "A320",
+    "name": "Airbus A320ceo",
+    "category": "Narrowbody",
+    "cruiseKtas": 450,
+    "maxRangeNm": 3300,
+    "minRunwayFt": 6200,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 36000
+  },
+  {
+    "icao": "A20N",
+    "name": "Airbus A320neo",
+    "category": "Narrowbody",
+    "cruiseKtas": 453,
+    "maxRangeNm": 3400,
+    "minRunwayFt": 6000,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 36000
+  },
+  {
+    "icao": "A321",
+    "name": "Airbus A321ceo",
+    "category": "Narrowbody",
+    "cruiseKtas": 450,
+    "maxRangeNm": 3200,
+    "minRunwayFt": 7200,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 35000
+  },
+  {
+    "icao": "A21N",
+    "name": "Airbus A321neo / LR / XLR",
+    "category": "Narrowbody",
+    "cruiseKtas": 455,
+    "maxRangeNm": 4000,
+    "minRunwayFt": 7000,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 36000
+  },
+  {
+    "icao": "B712",
+    "name": "Boeing 717-200",
+    "category": "Narrowbody",
+    "cruiseKtas": 438,
+    "maxRangeNm": 1430,
+    "minRunwayFt": 5500,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 34000
+  },
+  {
+    "icao": "B722",
+    "name": "Boeing 727-200",
+    "category": "Narrowbody",
+    "cruiseKtas": 470,
+    "maxRangeNm": 2400,
+    "minRunwayFt": 6800,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 35000
+  },
+  {
+    "icao": "B733",
+    "name": "Boeing 737-300",
+    "category": "Narrowbody",
+    "cruiseKtas": 435,
+    "maxRangeNm": 2250,
+    "minRunwayFt": 6200,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 35000
+  },
+  {
+    "icao": "B734",
+    "name": "Boeing 737-400",
+    "category": "Narrowbody",
+    "cruiseKtas": 435,
+    "maxRangeNm": 2060,
+    "minRunwayFt": 6800,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 35000
+  },
+  {
+    "icao": "B735",
+    "name": "Boeing 737-500",
+    "category": "Narrowbody",
+    "cruiseKtas": 435,
+    "maxRangeNm": 2375,
+    "minRunwayFt": 5800,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 35000
+  },
+  {
+    "icao": "B736",
+    "name": "Boeing 737-600",
+    "category": "Narrowbody",
+    "cruiseKtas": 447,
+    "maxRangeNm": 3235,
+    "minRunwayFt": 5600,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 36000
+  },
+  {
+    "icao": "B737",
+    "name": "Boeing 737-700",
+    "category": "Narrowbody",
+    "cruiseKtas": 450,
+    "maxRangeNm": 3010,
+    "minRunwayFt": 5800,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 36000
+  },
+  {
+    "icao": "B738",
+    "name": "Boeing 737-800",
+    "category": "Narrowbody",
+    "cruiseKtas": 453,
+    "maxRangeNm": 2935,
+    "minRunwayFt": 6600,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 36000
+  },
+  {
+    "icao": "B739",
+    "name": "Boeing 737-900ER",
+    "category": "Narrowbody",
+    "cruiseKtas": 453,
+    "maxRangeNm": 2950,
+    "minRunwayFt": 7400,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 36000
+  },
+  {
+    "icao": "B37M",
+    "name": "Boeing 737 MAX 7",
+    "category": "Narrowbody",
+    "cruiseKtas": 453,
+    "maxRangeNm": 3850,
+    "minRunwayFt": 5800,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 37000
+  },
+  {
+    "icao": "B38M",
+    "name": "Boeing 737 MAX 8",
+    "category": "Narrowbody",
+    "cruiseKtas": 455,
+    "maxRangeNm": 3550,
+    "minRunwayFt": 6500,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 36000
+  },
+  {
+    "icao": "B39M",
+    "name": "Boeing 737 MAX 9",
+    "category": "Narrowbody",
+    "cruiseKtas": 455,
+    "maxRangeNm": 3550,
+    "minRunwayFt": 7200,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 36000
+  },
+  {
+    "icao": "B752",
+    "name": "Boeing 757-200",
+    "category": "Narrowbody",
+    "cruiseKtas": 460,
+    "maxRangeNm": 3915,
+    "minRunwayFt": 6500,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 37000
+  },
+  {
+    "icao": "B753",
+    "name": "Boeing 757-300",
+    "category": "Narrowbody",
+    "cruiseKtas": 460,
+    "maxRangeNm": 3395,
+    "minRunwayFt": 7500,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 37000
+  },
+  {
+    "icao": "MD82",
+    "name": "McDonnell Douglas MD-82",
+    "category": "Narrowbody",
+    "cruiseKtas": 445,
+    "maxRangeNm": 2050,
+    "minRunwayFt": 6600,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 34000
+  },
+  {
+    "icao": "MD83",
+    "name": "McDonnell Douglas MD-83",
+    "category": "Narrowbody",
+    "cruiseKtas": 445,
+    "maxRangeNm": 2500,
+    "minRunwayFt": 6800,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 34000
+  },
+  {
+    "icao": "MD88",
+    "name": "McDonnell Douglas MD-88",
+    "category": "Narrowbody",
+    "cruiseKtas": 445,
+    "maxRangeNm": 2050,
+    "minRunwayFt": 6600,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 34000
+  },
+  {
+    "icao": "A306",
+    "name": "Airbus A300-600R / 600F",
+    "category": "Widebody",
+    "cruiseKtas": 465,
+    "maxRangeNm": 4050,
+    "minRunwayFt": 7500,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 36000
+  },
+  {
+    "icao": "A310",
+    "name": "Airbus A310-300",
+    "category": "Widebody",
+    "cruiseKtas": 465,
+    "maxRangeNm": 5150,
+    "minRunwayFt": 7400,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 37000
+  },
+  {
+    "icao": "A332",
+    "name": "Airbus A330-200 / 200F",
+    "category": "Widebody",
+    "cruiseKtas": 470,
+    "maxRangeNm": 7250,
+    "minRunwayFt": 8200,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 38000
+  },
+  {
+    "icao": "A333",
+    "name": "Airbus A330-300",
+    "category": "Widebody",
+    "cruiseKtas": 470,
+    "maxRangeNm": 6350,
+    "minRunwayFt": 8500,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 38000
+  },
+  {
+    "icao": "A337",
+    "name": "Airbus A330-700L BelugaXL",
+    "category": "Widebody",
+    "cruiseKtas": 460,
+    "maxRangeNm": 2200,
+    "minRunwayFt": 8000,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 35000
+  },
+  {
+    "icao": "A339",
+    "name": "Airbus A330-900neo",
+    "category": "Widebody",
+    "cruiseKtas": 470,
+    "maxRangeNm": 7200,
+    "minRunwayFt": 8500,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 38000
+  },
+  {
+    "icao": "A343",
+    "name": "Airbus A340-300",
+    "category": "Widebody",
+    "cruiseKtas": 470,
+    "maxRangeNm": 7300,
+    "minRunwayFt": 9500,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 38000
+  },
+  {
+    "icao": "A346",
+    "name": "Airbus A340-600",
+    "category": "Widebody",
+    "cruiseKtas": 475,
+    "maxRangeNm": 7800,
+    "minRunwayFt": 9800,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 38000
+  },
+  {
+    "icao": "A359",
+    "name": "Airbus A350-900",
+    "category": "Widebody",
+    "cruiseKtas": 488,
+    "maxRangeNm": 8100,
+    "minRunwayFt": 8500,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 39000
+  },
+  {
+    "icao": "A35K",
+    "name": "Airbus A350-1000",
+    "category": "Widebody",
+    "cruiseKtas": 488,
+    "maxRangeNm": 8700,
+    "minRunwayFt": 9200,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 39000
+  },
+  {
+    "icao": "A388",
+    "name": "Airbus A380-800",
+    "category": "Widebody",
+    "cruiseKtas": 490,
+    "maxRangeNm": 8000,
+    "minRunwayFt": 9800,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 39000
+  },
+  {
+    "icao": "B762",
+    "name": "Boeing 767-200ER",
+    "category": "Widebody",
+    "cruiseKtas": 465,
+    "maxRangeNm": 6590,
+    "minRunwayFt": 7800,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 37000
+  },
+  {
+    "icao": "B763",
+    "name": "Boeing 767-300ER / 300F",
+    "category": "Widebody",
+    "cruiseKtas": 465,
+    "maxRangeNm": 5980,
+    "minRunwayFt": 8200,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 37000
+  },
+  {
+    "icao": "B764",
+    "name": "Boeing 767-400ER",
+    "category": "Widebody",
+    "cruiseKtas": 465,
+    "maxRangeNm": 5625,
+    "minRunwayFt": 8800,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 37000
+  },
+  {
+    "icao": "B772",
+    "name": "Boeing 777-200 / 200ER",
+    "category": "Widebody",
+    "cruiseKtas": 485,
+    "maxRangeNm": 7065,
+    "minRunwayFt": 8500,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 38000
+  },
+  {
+    "icao": "B77L",
+    "name": "Boeing 777-200LR / 777F",
+    "category": "Widebody",
+    "cruiseKtas": 488,
+    "maxRangeNm": 8555,
+    "minRunwayFt": 9200,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 38000
+  },
+  {
+    "icao": "B77W",
+    "name": "Boeing 777-300ER",
+    "category": "Widebody",
+    "cruiseKtas": 490,
+    "maxRangeNm": 7370,
+    "minRunwayFt": 9500,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 37000
+  },
+  {
+    "icao": "B779",
+    "name": "Boeing 777-9 (777X)",
+    "category": "Widebody",
+    "cruiseKtas": 490,
+    "maxRangeNm": 7285,
+    "minRunwayFt": 9500,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 38000
+  },
+  {
+    "icao": "B788",
+    "name": "Boeing 787-8 Dreamliner",
+    "category": "Widebody",
+    "cruiseKtas": 488,
+    "maxRangeNm": 7305,
+    "minRunwayFt": 8500,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 39000
+  },
+  {
+    "icao": "B789",
+    "name": "Boeing 787-9 Dreamliner",
+    "category": "Widebody",
+    "cruiseKtas": 488,
+    "maxRangeNm": 7565,
+    "minRunwayFt": 8800,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 39000
+  },
+  {
+    "icao": "B78X",
+    "name": "Boeing 787-10 Dreamliner",
+    "category": "Widebody",
+    "cruiseKtas": 488,
+    "maxRangeNm": 6330,
+    "minRunwayFt": 9200,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 39000
+  },
+  {
+    "icao": "B742",
+    "name": "Boeing 747-200",
+    "category": "Widebody",
+    "cruiseKtas": 490,
+    "maxRangeNm": 6560,
+    "minRunwayFt": 10000,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 37000
+  },
+  {
+    "icao": "B744",
+    "name": "Boeing 747-400 / 400F",
+    "category": "Widebody",
+    "cruiseKtas": 493,
+    "maxRangeNm": 7260,
+    "minRunwayFt": 9800,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 37000
+  },
+  {
+    "icao": "B748",
+    "name": "Boeing 747-8i / 8F",
+    "category": "Widebody",
+    "cruiseKtas": 495,
+    "maxRangeNm": 7730,
+    "minRunwayFt": 10000,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 37000
+  },
+  {
+    "icao": "MD11",
+    "name": "McDonnell Douglas MD-11 / MD-11F",
+    "category": "Widebody",
+    "cruiseKtas": 475,
+    "maxRangeNm": 6840,
+    "minRunwayFt": 9600,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 37000
+  },
+  {
+    "icao": "DC10",
+    "name": "McDonnell Douglas DC-10-30",
+    "category": "Widebody",
+    "cruiseKtas": 470,
+    "maxRangeNm": 5700,
+    "minRunwayFt": 9400,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 36000
+  },
+  {
+    "icao": "C17",
+    "name": "Boeing C-17 Globemaster III",
+    "category": "Widebody",
+    "cruiseKtas": 450,
+    "maxRangeNm": 2420,
+    "minRunwayFt": 3500,
+    "requiresPaved": false,
+    "typicalCruiseAltFt": 35000
+  },
+  {
+    "icao": "CONC",
+    "name": "Aérospatiale/BAC Concorde",
+    "category": "Widebody",
+    "cruiseKtas": 1170,
+    "maxRangeNm": 3900,
+    "minRunwayFt": 10500,
+    "requiresPaved": true,
+    "typicalCruiseAltFt": 58000
+  }
+]
